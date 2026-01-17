@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mioca{% endblock %}</title>
+    
+    <link rel="shortcut icon" href="{% static 'images/favicon/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/pe-icon-7-stroke.css' %}">
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
