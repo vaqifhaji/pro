@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="blog-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog-post">
+                    <div class="blog-header">
+                        <h1>Welcome to Our Blog</h1>
+                        <p class="blog-meta">Posted on January 31, 2026 | By Admin</p>
+                    </div>
+                    <div class="blog-body">
+                        <img src="{% static 'images/blog-image/1.jpg' %}" alt="Blog" class="img-fluid mb-4">
+                        <p>Welcome to our handmade goods blog! Here you'll find the latest updates and stories about our products and community.</p>
+                        <p>Our blog features articles about artisan craftsmanship, behind-the-scenes looks at our production process, and tips for caring for your handmade items.</p>
+                        <h3>Stay Connected</h3>
+                        <p>Follow us on social media for daily updates and exclusive offers on our handcrafted products.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-sidebar">
+                    <div class="sidebar-widget">
+                        <h4>Recent Posts</h4>
+                        <ul>
+                            <li><a href="{% url 'blog' %}">Our Latest Collection</a></li>
+                            <li><a href="{% url 'blog' %}">Artisan Stories</a></li>
+                            <li><a href="{% url 'blog' %}">Care Instructions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ block.super }}
+{% endblock %}

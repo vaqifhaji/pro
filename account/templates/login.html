@@ -1,8 +1,7 @@
+{% extends 'base.html' %}
+{% load static %}
 
-<!DOCTYPE html>
-<html lang="zxx">
-
-<head>
+{% block content %}
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="robots" content="index, follow" />
@@ -26,9 +25,9 @@
     <link rel="stylesheet" href="assets/css/plugins/venobox.css" /> -->
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <link rel="stylesheet" href={% static "assets/css/vendor/vendor.min.css" %}>
-    <link rel="stylesheet" href={% static "assets/css/plugins/plugins.min.css" %}>
-    <link rel="stylesheet" href={% static "assets/css/style.min.css" %}>
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/vendor.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/plugins.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}">
 
     <!-- Main Style -->
     <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
@@ -44,7 +43,7 @@
                 <div class="row">
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+                            <a href="index.html"><img src="{% static 'images/logo/logo.png' %}" alt="Site Logo" /></a>
                         </div>
                     </div>
                     <div class="col align-self-center d-none d-lg-block"> 
@@ -78,7 +77,7 @@
                                                 <li>
                                                     <a class="p-0" href="shop-left-sidebar.html"><img
                                                             class="img-responsive w-100"
-                                                            src="assets/images/banner/menu-banner-1.jpg" alt=""></a>
+                                                            src="{% static 'images/banner/menu-banner-1.jpg' %}" alt=""></a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -110,16 +109,16 @@
                                 </ul>
                             </div>
                             <!-- Single Wedge Start -->
-                            <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
+                            <a href="{% url 'wishlist' %}" class="header-action-btn offcanvas-toggle">
                                 <i class="pe-7s-like"></i>
                             </a>
                             <!-- Single Wedge End -->
-                            <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                            <a href="{% url 'cart' %}" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                 <i class="pe-7s-shopbag"></i>
                                 <span class="header-action-num">01</span>
                                 <!-- <span class="cart-amount">€30.00</span> -->
                             </a>
-                            <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                            <a href="{% url 'mobile_menu' %}" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
                                 <i class="pe-7s-menu"></i>
                             </a>
                         </div>
@@ -142,7 +141,7 @@
             <div class="body customScroll">
                 <ul class="minicart-product-list">
                     <li>
-                        <a href="single-product.html" class="image"><img src="assets/images/product-image/1.jpg"
+                        <a href="single-product.html" class="image"><img src="{% static 'images/product-image/1.jpg' %}"
                                 alt="Cart product Image"></a>
                         <div class="content">
                             <a href="single-product.html" class="title">Hand-Made Garlic Mortar</a>
@@ -151,7 +150,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="single-product.html" class="image"><img src="assets/images/product-image/2.jpg"
+                        <a href="single-product.html" class="image"><img src="{% static 'images/product-image/2.jpg' %}"
                                 alt="Cart product Image"></a>
                         <div class="content">
                             <a href="single-product.html" class="title">Handmade Ceramic Pottery</a>
@@ -160,7 +159,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="single-product.html" class="image"><img src="assets/images/product-image/3.jpg"
+                        <a href="single-product.html" class="image"><img src="{% static 'images/product-image/3.jpg' %}"
                                 alt="Cart product Image"></a>
                         <div class="content">
                             <a href="single-product.html" class="title">Hand Painted Bowls</a>
@@ -189,7 +188,7 @@
             <div class="body customScroll">
                 <ul class="minicart-product-list">
                     <li>
-                        <a href="single-product.html" class="image"><img src="assets/images/product-image/1.jpg"
+                        <a href="single-product.html" class="image"><img src="{% static 'images/product-image/1.jpg' %}"
                                 alt="Cart product Image"></a>
                         <div class="content">
                             <a href="single-product.html" class="title">Hand-Made Garlic Mortar</a>
@@ -198,7 +197,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="single-product.html" class="image"><img src="assets/images/product-image/2.jpg"
+                        <a href="single-product.html" class="image"><img src="{% static 'images/product-image/2.jpg' %}"
                                 alt="Cart product Image"></a>
                         <div class="content">
                             <a href="single-product.html" class="title">Handmade Ceramic Pottery</a>
@@ -207,7 +206,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="single-product.html" class="image"><img src="assets/images/product-image/3.jpg"
+                        <a href="single-product.html" class="image"><img src="{% static 'images/product-image/3.jpg' %}"
                                 alt="Cart product Image"></a>
                         <div class="content">
                             <a href="single-product.html" class="title">Hand Painted Bowls</a>
@@ -434,18 +433,7 @@
     <!-- login area end -->
 
 
-    <div class="newsletter-area ">
-        <div class="container line-shape-bottom">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="newsletter-content mb-lm-30px">
-                        <i class="pe-7s-mail-open-file"></i>
-                        <div class="newsletter-text">
-                            <h3 class="title">Newsletter & Get Updates</h3>
-                            <p>Sign up for our newsletter to get update from us</p>
-                        </div>
-                    </div>
-                </div>
+{% endblock %}
                 <div class="col-lg-6">
                     <div class="news-letter-form">
                         <div id="mc_embed_signup" class="subscribe-form">
@@ -473,123 +461,7 @@
         </div>
     </div>
 
-    <!-- Footer Area Start -->
-    <div class="footer-area">
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
-                        <!-- Start single blog -->
-                        <div class="col-md-6 col-sm-6 col-lg-3 mb-md-30px mb-lm-30px">
-                            <div class="single-wedge">
-                                <h4 class="footer-herading">Information</h4>
-                                <div class="footer-links">
-                                    <div class="footer-row">
-                                        <ul class="align-items-center">
-                                            <li class="li"><a class="single-link" href="about.html">About us</a></li>
-                                            <li class="li"><a class="single-link" href="#">Delivery information</a></li>
-                                            <li class="li"><a class="single-link" href="privacy-policy.html">Privacy
-                                                    Policy</a></li>
-                                            <li class="li"><a class="single-link" href="#">Sales</a></li>
-                                            <li class="li"><a class="single-link" href="#">Terms & Conditions</a></li>
-                                            <li class="li"><a class="single-link" href="#">Shipping Policy</a></li>
-                                            <li class="li"><a class="single-link" href="#">EMI Payment</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single blog -->
-                        <!-- Start single blog -->
-                        <div class="col-md-6 col-lg-3 col-sm-6 mb-lm-30px">
-                            <div class="single-wedge">
-                                <h4 class="footer-herading">Account</h4>
-                                <div class="footer-links">
-                                    <div class="footer-row">
-                                        <ul class="align-items-center">
-                                            <li class="li"><a class="single-link" href="my-account.html"> My account</a>
-                                            </li>
-                                            <li class="li"><a class="single-link" href="cart.html">My orders</a></li>
-                                            <li class="li"><a class="single-link" href="#">Returns</a></li>
-                                            <li class="li"><a class="single-link"
-                                                    href="shop-left-sidebar.html">Shipping</a></li>
-                                            <li class="li"><a class="single-link" href="wishlist.html">Wishlist</a></li>
-                                            <li class="li"><a class="single-link" href="#">How Does It Work</a></li>
-                                            <li class="li"><a class="single-link" href="#">Merchant Sign Up</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single blog -->
-                        <!-- Start single blog -->
-                        <div class="col-md-6 col-lg-2 col-sm-6 mb-sm-30px">
-                            <div class="single-wedge">
-                                <h4 class="footer-herading">Store </h4>
-                                <div class="footer-links">
-                                    <div class="footer-row">
-                                        <ul class="align-items-center">
-                                            <li class="li"><a class="single-link" href="index.html">Affiliate</a></li>
-                                            <li class="li"><a class="single-link"
-                                                    href="shop-left-sidebar.html">Bestsellers</a></li>
-                                            <li class="li"><a class="single-link" href="#">Discount</a></li>
-                                            <li class="li"><a class="single-link" href="#">Latest products</a></li>
-                                            <li class="li"><a class="single-link" href="#">Sale</a></li>
-                                            <li class="li"><a class="single-link" href="#">All Collection</a></li>
-                                            <li class="li"><a class="single-link" href="contact.html">Contact Us</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single blog -->
-                        <!-- Start single blog -->
-                        <div class="col-md-6 col-lg-4 col-sm-6 pl-120px line-shape">
-                            <div class="single-wedge ">
-
-                                <h4 class="footer-herading">Contact Us</h4>
-                                <div class="footer-links">
-                                    <!-- News letter area -->
-                                    <p class="mail">If you have any question.please <br>
-                                        contact us at <a href="mailto:demo@example.com">demo@example.com</a> </p>
-                                    <p class="address"><i class="pe-7s-map-marker"></i> <span>Your address goes here.
-                                            <br>
-                                            123, Address.</span> </p>
-                                    <p class="phone m-0"><i class="pe-7s-phone"></i><span><a href="tel:0123456789">+ 0
-                                                123
-                                                456 789</a> <br> <a href="tel:0123456789">+ 0 123 456 789</a></span></p>
-
-                                    <!-- News letter area  End -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single blog -->
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="line-shape-top">
-                        <div class="row flex-md-row-reverse align-items-center">
-                            <div class="col-md-6 text-center text-md-end">
-                                <div class="payment-mth"><a href="#"><img class="img img-fluid"
-                                            src="assets/images/icons/payment.png" alt="payment-image"></a></div>
-                            </div>
-                            <div class="col-md-6 text-center text-md-start">
-                                <p class="copy-text"> © 2021 <strong>Mioca.</strong> Made With <i class="fa fa-heart"
-                                        aria-hidden="true"></i> By <a class="company-name"
-                                        href="https://hasthemes.com/">
-                                        <strong> HasThemes</strong></a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer Area End -->
-
+    
     <!-- Search Modal Start -->
     <div class="modal popup-search-style" id="searchActive">
         <button type="button" class="close-btn" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
@@ -631,11 +503,11 @@
     <script src="assets/js/plugins/ajax-mail.js"></script> -->
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <script src="assets/js/vendor/vendor.min.js"></script>
-    <script src="assets/js/plugins/plugins.min.js"></script>
+    <script src="{% static 'js/vendor/vendor.min.js' %}"></script>
+    <script src="{% static 'js/plugins/plugins.min.js' %}"></script>
 
     <!-- Main Js -->
-    <script src="assets/js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>

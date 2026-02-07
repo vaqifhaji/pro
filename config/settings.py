@@ -122,3 +122,16 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+# Media files configuration
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# Custom User Model
+AUTH_USER_MODEL = 'account.User'
+
+# settings.py
+
+# ... other settings ...
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
