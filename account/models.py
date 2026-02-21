@@ -1,15 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-# Use JSONField for storing lists on SQLite; avoid postgres-specific ArrayField
+from django.contrib.postgres.fields import ArrayField
+from core.models import AbstracModel
+
+
 
 class User(AbstractUser):
     phone = models.CharField('phone', max_length=50, null=True, blank=True)
     email = models.EmailField("email address", unique=True)
     profile_image = models.ImageField(upload_to='profile_images/', null=True, blank=True)
-    ips = models.JSONField(null=True, blank=True)
+    ips = ArrayField(models.GenericIPAddressField(), null=True, blank=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = 'name',
+    REQUIRED_FIELDS = ['username']
 
     def get_profile_image(self):
         if self.profile_image:
@@ -18,10 +21,5 @@ class User(AbstractUser):
             return '/static/images/profile.jpg'
         
 
-class BlockedIpAddress(models.Model):
+class BlockedIpAddress(AbstracModel):
     ip_address = models.GenericIPAddressField()
-    reason = models.CharField('Reason', max_length=255, null=True, blank=True)
-    blocked_at = models.DateTimeField('Blocked at', auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.ip_address}"
